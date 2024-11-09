@@ -1,14 +1,11 @@
 import express from "express";
 import ocrRoutes from "./routes/ocrRoutes";
-import config from "./config/default";
-
 
 const app = express();
-const port = config.port;
+const port = process.env.PORT || 3000;
 
 app.use("/api", ocrRoutes);
 
-
 app.listen(port, () => {
-  console.log(`Server running on Port : ${port}`);
+  console.log(`Server running on Port: ${port}`);
 });
